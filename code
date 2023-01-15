@@ -11,13 +11,13 @@ namespace jun1
         static void Main(string[] args)
         {
             int oldWomen;
-            int waitingTimeOneOldWoman = 10;
+            int oneOldWomanInQueue = 10;
             int waitingTime;
 
             Console.WriteLine("Вы в очереди, сколько вы видите старушек?");
             oldWomen = Convert.ToInt32(Console.ReadLine());
 
-            waitingTime = oldWomen * waitingTimeOneOldWoman;
+            waitingTime = oldWomen * oneOldWomanInQueue;
 
             Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTime + "минут");
         }
