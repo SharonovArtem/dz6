@@ -15,14 +15,14 @@ namespace jun1
             
             {
                 int oldWomenInQueue;
-                int oneOldWomanInQueue = 10;
+                int WaitingTimeoneOldWomanInQueue = 10;
                 int waitingTimeMinutes;
                 int waitingTimeHours = 0;
 
                 Console.WriteLine("Вы в очереди, сколько вы видите старушек?");
                 oldWomenInQueue = Convert.ToInt32(Console.ReadLine());
 
-                waitingTimeMinutes = oldWomenInQueue * oneOldWomanInQueue;
+                waitingTimeMinutes = oldWomenInQueue * WaitingTimeoneOldWomanInQueue;
 
                 while (waitingTimeMinutes >= 60)
                 {
