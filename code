@@ -6,20 +6,39 @@ using System.Threading.Tasks;
 
 namespace jun1
 {
-    internal class Program
+
+namespace jun1
     {
-        static void Main(string[] args)
+        internal class Program
         {
-            int oldWomen;
-            int oneOldWomanInQueue = 10;
-            int waitingTime;
+            static void Main(string[] args)
+            
+            {
+                int oldWomenInQueue;
+                int oneOldWomanInQueue = 10;
+                int waitingTimeMinutes;
+                int waitingTimeHours = 0;
 
-            Console.WriteLine("Вы в очереди, сколько вы видите старушек?");
-            oldWomen = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Вы в очереди, сколько вы видите старушек?");
+                oldWomenInQueue = Convert.ToInt32(Console.ReadLine());
 
-            waitingTime = oldWomen * oneOldWomanInQueue;
+                waitingTimeMinutes = oldWomenInQueue * oneOldWomanInQueue;
 
-            Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTime + "минут");
+                while (waitingTimeMinutes >= 60)
+                {
+                    waitingTimeMinutes -= 60;
+                    waitingTimeHours += 1;
+                }
+
+                if (waitingTimeMinutes == 0)
+                {
+                    Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTimeHours + " часов");
+                }
+                else
+                {
+                    Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTimeHours + " часов и " + waitingTimeMinutes + "минут");
+                }
+            }
         }
     }
 }
