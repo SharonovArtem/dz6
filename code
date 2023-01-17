@@ -4,41 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace jun1
 {
-
-namespace jun1
+    internal class Program
     {
-        internal class Program
+        static void Main(string[] args)
+
         {
-            static void Main(string[] args)
-            
+            int oldWomenInQueue;
+            int oneOldWomanInQueue = 10;
+            int waitingTimeMinutes;
+            int waitingTimeHours;
+            int minutesInHour = 60;
+
+            Console.WriteLine("Вы в очереди, сколько вы видите старушек?");
+            oldWomenInQueue = Convert.ToInt32(Console.ReadLine());
+
+            waitingTimeMinutes = oldWomenInQueue * oneOldWomanInQueue;
+            waitingTimeHours = waitingTimeMinutes / minutesInHour;
+            waitingTimeMinutes -= waitingTimeHours * minutesInHour;
+
+            if (waitingTimeMinutes == 0)
             {
-                int oldWomenInQueue;
-                int WaitingTimeoneOldWomanInQueue = 10;
-                int waitingTimeMinutes;
-                int waitingTimeHours = 0;
-
-                Console.WriteLine("Вы в очереди, сколько вы видите старушек?");
-                oldWomenInQueue = Convert.ToInt32(Console.ReadLine());
-
-                waitingTimeMinutes = oldWomenInQueue * WaitingTimeoneOldWomanInQueue;
-
-                while (waitingTimeMinutes >= 60)
-                {
-                    waitingTimeMinutes -= 60;
-                    waitingTimeHours += 1;
-                }
-
-                if (waitingTimeMinutes == 0)
-                {
-                    Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTimeHours + " часов");
-                }
-                else
-                {
-                    Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTimeHours + " часов и " + waitingTimeMinutes + "минут");
-                }
+                Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTimeHours + " часов");
+            }
+            else
+            {
+                Console.WriteLine("К сожалению вам осталось ждать целых " + waitingTimeHours + " часов и " + waitingTimeMinutes + "минут");
+            }
             }
         }
     }
-}
